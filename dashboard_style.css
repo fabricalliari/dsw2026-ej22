@@ -8,14 +8,20 @@
     "footer";
   height: 100dvh;
 }
-
 .dashboard-container nav {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 200px;
-  background-color: #f4f4f4;
+  background-color: white;
   left: -200px;
+}
+.menu a:hover
+{
+    
+}
+.dashboard-container nav.open {
+  left: 0;
 }
 
 .dashboard-container nav ul {
