@@ -17,22 +17,40 @@
         <button id="logout">Cerrar Sesión</button>
       </div>
     </header>
-    <nav id="sidebar">
+    <nav class="sidebar">
+      <h3>  Admin Portal</h3>
+      <h5> Healthcare Management</h5>
       <ul>
+
         <li><a href="#">Panel</a></li>
+        <li><a href="#">Doctores</a></li>
+        <li><a href="#">Especialidades</a></li>
+        <li><a href="#">Busqueda de pacientes</a></li>
+        <li><a href="#">Configuracion </a></li>
+        
       </ul>
     </nav>
     <main>
-      <h1>Pacientes</h1>
+      <h1>Vista General de Gestion</h1>
+      <h2> Configure el personal medico y las especialidades del departamento</h2>
+      <button class="addDoctor">Agregar nuevo doctor</button>
+      <button class="addSpecialty">Agregar nueva especialidad</button>
+      <div>
+      <card>Doctores Activos</card>
+      <card>Especialidades Activas</card>
+      <card>Turnos confirmados para hoy</card>
+      </div>
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Paciente</th>
+            Directorio de Profesionales Medicos
+
           </tr>
         </thead>
+
         <tbody id="product-table-body">
-          <!-- Los productos se cargarán aquí dinámicamente -->
+
+          <th> Nombre del doctor </th>
         </tbody>
       </table>
     </main>
