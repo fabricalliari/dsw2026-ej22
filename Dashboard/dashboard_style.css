@@ -1,90 +1,89 @@
+/* Estilos generales */
+body {
+    margin: 0;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* Contenedor principal */
 .dashboard-container {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 
-    "header"
-    "main"
-    "footer";
-  height: 100dvh;
-}
-.dashboard-container nav {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 200px;
-  background-color: white;
-  left: -200px;
-}
-.menu a:hover
-{
-    
-}
-.dashboard-container nav.open {
-  left: 0;
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+    min-height: 100dvh;
 }
 
-.dashboard-container nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dashboard-container nav ul li {
-  padding: 1rem;
-  border-bottom: 1px solid #ddd;
-}
-
+/* Header */
 .dashboard-container header {
-  grid-area: header;
-  height: 50px;
-  background-color: #333;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+    grid-area: header;
+
+    min-height: 3.2rem;
+    padding: 0 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #333;
+    color: white;
 }
 
+/* Contenido del header */
 .dashboard-container header div {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
 }
 
+/* Botón del menú */
+.dashboard-container header .menu {
+    position: relative;
+    z-index: 1100;
+}
+
+/* Main */
 .dashboard-container main {
-  grid-area: main;
-  padding: 1rem;
-  overflow-y: auto;
+    grid-area: main;
+
+    padding: 1rem;
+
+    overflow-y: auto;
 }
 
+/* Footer */
 .dashboard-container footer {
-  grid-area: footer;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+    grid-area: footer;
+
+    padding: 1rem;
+
+    background-color: #333;
+    color: white;
+
+    text-align: center;
 }
-.dashboard-container nav.open {
-    left: 0;
-}
+
+/* Escritorio */
 @media screen and (min-width: 600px) {
-  .dashboard-container {
-    grid-template-columns: 200px 1fr;
-    grid-template-areas: 
-      "header header"
-      "nav main"
-      "footer footer";
-  }
+    .dashboard-container {
+        grid-template-columns: 18rem 1fr;
 
-  .dashboard-container nav {
-    grid-area: nav;
-    position: static;
-    left: 0;
-    height: auto;
-  }
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+    }
 
-  .dashboard-container header div .menu {
-    display: none;
-  }
+    .dashboard-container header .menu {
+        display: none;
+    }
 }

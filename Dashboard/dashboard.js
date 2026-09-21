@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const logoutButton = document.getElementById('logout');
   const menu = document.querySelector('.menu');
-  const sidebar = document.getElementById('sidebar')
+  const sidebar = document.querySelector('.sidebar')
 
 
   logoutButton.addEventListener('click', () => {
-    window.location.href = 'login.html';
+    window.location.href = '../Login/login.html';
   });
 
 
