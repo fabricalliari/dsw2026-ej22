@@ -6,8 +6,14 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    /* Fondo azul acorde al TPI */
-    background: #091733;
+    /* Imagen del consultorio con una capa azul para mantener el contraste. */
+    background-color: #091733;
+    background-image:
+        linear-gradient(rgba(9, 23, 51, 0.65), rgba(23, 107, 128, 0.45)),
+        url("../Images/Fondo-consultorio2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     /* USO DE TEORÍA (Pág 57-59): Flexbox para centrar todo */
     display: flex;
     justify-content: center;

@@ -4,6 +4,13 @@ const menu = document.querySelector(".menu");
 const sidebar = document.querySelector(".sidebar");
 const cuerpoTabla = document.getElementById("product-table-body");
 const cantidadDoctores = document.getElementById("cantidad-doctores");
+const addSpecialtyButton = document.querySelector(".addSpecialty");
+
+if (addSpecialtyButton) {
+    addSpecialtyButton.addEventListener("click", () => {
+        window.location.href = "../Specialty/specialty.html";
+    });
+}
 
 // Navegación al login.
 logoutButton.addEventListener("click", () => {
@@ -82,4 +89,6 @@ function mostrarDoctores() {
         "Mostrando " + doctores.length + " profesionales";
 }
 
-mostrarDoctores();
+if (cuerpoTabla && cantidadDoctores) {
+    mostrarDoctores();
+}
