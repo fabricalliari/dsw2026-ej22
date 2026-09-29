@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Nueva Especialidad</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../Dashboard/dashboard_style.css">
+    <link rel="stylesheet" href="../SideBar/Sidebar.css">
+    <link rel="stylesheet" href="specialty.css">
+    <script src="../Dashboard/dashboard.js" defer></script>
+    <script src="../storage.js" defer></script>
+    <script src="specialty.js" defer></script>
+</head>
+<body>
+<div class="dashboard-container">
+    <header>
+        <span>Gestor de turnos</span>
+        <div>
+            <button class="menu" aria-label="Abrir menú">&#9776;</button>
+            <button id="logout">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Admin Portal</h1>
+            <h2>Healthcare Management</h2>
+        </div>
+        <ul>
+            <li><a href="../Dashboard/dashboard.html">Panel</a></li>
+            <li><a href="#">Doctores</a></li>
+            <li><a href="specialties.html">Especialidades</a></li>
+            <li><a href="#">Busqueda de pacientes</a></li>
+            <li class="sidebar-config"><a href="#">Configuracion</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <nav class="breadcrumbs" aria-label="Ruta de navegación">
+            <a href="specialties.html">Especialidades</a>
+            <span aria-hidden="true">&gt;</span>
+            <span aria-current="page">Agregar Nueva Especialidad</span>
+        </nav>
+
+        <h1>Registrar Nueva Especialidad</h1>
+
+        <form id="specialty-form" class="specialty-form" novalidate>
+            <div class="field">
+                <label for="name">Nombre</label>
+                <input id="name" type="text" aria-describedby="name-error">
+                <span id="name-error" class="error" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+                <label for="description">Descripción</label>
+                <textarea id="description" rows="4" aria-describedby="description-error"></textarea>
+                <span id="description-error" class="error" aria-live="polite"></span>
+            </div>
+
+            <div class="actions">
+                <a href="specialties.html" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar Especialidad</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>Mi Aplicación &copy; 2026</footer>
+</div>
+</body>
+</html>
