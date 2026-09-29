@@ -1,85 +1,104 @@
-/* Contenedor principal */
-.login-container {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Fondo azul acorde al TPI */
+    background: #091733;
+    /* USO DE TEORÍA (Pág 57-59): Flexbox para centrar todo */
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
-/* Fuente general */
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-
-    background-image: url("../Images/Fondo-consultorio2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
 }
 
-/* Título */
-h1 {
-    font-size: 150%;
-}
-
-/* Formulario */
-.login-container form {
+/* Flexbox para alinear el logo y el título */
+.login-header {
     display: flex;
     flex-direction: column;
-    gap: 0.1rem;
-
-    background: rgba(255, 255, 255, 0.16);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(18px);
-
-    padding: 2rem;
-    border-radius: 25px;
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Botón */
-.login-container button {
-    padding: 0.8rem 1rem;
-    border: none;
-    border-radius: 12px;
+.logo-img {
+    width: 50px; /* Tamaño del ícono */
+    margin-bottom: 10px;
+}
 
-    background: rgba(255, 255, 255, 0.22);
+.login-header h1 {
     color: white;
+    font-size: 24px;
+}
 
-    font-size: 1rem;
+/* Estilos de la tarjeta blanca */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    /* Sombra simple */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 13px;
     font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
 
+input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+input:focus {
+    border-color: #0047AB;
+    outline: none;
+}
+
+button {
+    background: #0047AB;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
     cursor: pointer;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-    transition: 0.25s;
+    margin-top: 10px;
 }
 
-/* Efecto del botón */
-.login-container button:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
+button:hover {
+    background: #003380;
 }
 
-/* Sombra del texto */
-.login-container h1,
-.login-container label {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
-}
-
-/* Vista escritorio */
-@media screen and (min-width: 600px) {
-    .login-container {
-        align-items: center;
-    }
-
-    .login-container form {
-        width: 400px;
-    }
+.security-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #555;
+    text-align: center;
 }
