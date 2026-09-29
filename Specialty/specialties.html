@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de Especialidades</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../Dashboard/dashboard_style.css">
+    <link rel="stylesheet" href="../SideBar/Sidebar.css">
+    <link rel="stylesheet" href="specialty.css">
+    <script src="../Dashboard/dashboard.js" defer></script>
+    <script src="../storage.js" defer></script>
+    <script src="specialties.js" defer></script>
+</head>
+<body>
+<div class="dashboard-container">
+    <header>
+        <span>Gestor de turnos</span>
+        <div>
+            <button class="menu" aria-label="Abrir menú">&#9776;</button>
+            <button id="logout">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-brand">
+            <h1>Admin Portal</h1>
+            <h2>Healthcare Management</h2>
+        </div>
+        <ul>
+            <li><a href="../Dashboard/dashboard.html">Panel</a></li>
+            <li><a href="#">Doctores</a></li>
+            <li><a href="specialties.html" aria-current="page">Especialidades</a></li>
+            <li><a href="#">Busqueda de pacientes</a></li>
+            <li class="sidebar-config"><a href="#">Configuracion</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>Directorio de Especialidades</h1>
+            <a href="specialty.html" class="btn btn-primary">+ Nueva Especialidad</a>
+        </div>
+
+        <div class="resumen-panel">
+            <div class="tarjeta-resumen">
+                <div class="tarjeta-superior">
+                    <span class="tarjeta-icono" aria-hidden="true">▦</span>
+                </div>
+                <h3>Total especialidades</h3>
+                <p class="tarjeta-valor" id="total-specialties">0</p>
+            </div>
+
+            <div class="tarjeta-resumen">
+                <div class="tarjeta-superior">
+                    <span class="tarjeta-icono" aria-hidden="true">★</span>
+                    <span class="tarjeta-etiqueta">Sin datos de turnos</span>
+                </div>
+                <h3>Más demandada</h3>
+                <p class="tarjeta-valor">—</p>
+            </div>
+
+            <div class="tarjeta-resumen">
+                <div class="tarjeta-superior">
+                    <span class="tarjeta-icono" aria-hidden="true">📅</span>
+                    <span class="tarjeta-etiqueta">Este mes</span>
+                </div>
+                <h3>Nuevas este mes</h3>
+                <p class="tarjeta-valor" id="new-this-month">0</p>
+            </div>
+        </div>
+
+        <section class="directorio">
+            <div class="directorio-encabezado">
+                <h3 id="titulo-directorio">Especialidades registradas</h3>
+
+                <form id="search-form" class="search-form" role="search" novalidate>
+                    <input type="search" id="search" class="directorio-buscador"
+                           placeholder="Buscar por nombre..."
+                           aria-label="Buscar especialidad por nombre"
+                           aria-describedby="search-error">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
+            </div>
+            <span id="search-error" class="error search-error" aria-live="polite"></span>
+
+            <div class="directorio-tabla-contenedor">
+                <table class="directorio-tabla" aria-labelledby="titulo-directorio">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody id="specialties-body"></tbody>
+                </table>
+            </div>
+
+            <div class="directorio-pie">
+                <p id="specialties-count" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>Mi Aplicación &copy; 2026</footer>
+</div>
+</body>
+</html>
