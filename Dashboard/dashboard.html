@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="dashboard_style.css">
   <link rel="stylesheet" href="../Sidebar/sidebar.css">
-  <script src="dashboard.js"></script>
+  <script src="dashboard.js" defer ></script>
 </head>
 <body>  <!-- hay que ver si se puede desagregar esto. -->
   <div class="dashboard-container">
@@ -19,9 +19,9 @@
       </div>
     </header>
     <nav id="sidebar" class="sidebar">
-    <div class="sidebar-brand">
+<div class="sidebar-brand">
     <h1>Admin Portal</h1>
-    <h2>Healthcare Management</h2>
+    <p>Healtcare Management</p>
 </div>
       <ul>
 
@@ -33,30 +33,84 @@
         <a href="#">Configuracion</a>
         </li>
       </ul>
-    </nav> <!--Hasta aqui hay que ver si podemos llevarlo a otro lado y referenciarlo-->
+    </nav> <!--Hasta aqui hay que ver si podemos desagregar: ACLARO NO SE PUEDE.,-->
     <main>
       <h1>Vista General de Gestion</h1>
       <h2> Configure el personal medico y las especialidades del departamento</h2>
       <button class="addDoctor">Agregar nuevo doctor</button>
       <button class="addSpecialty">Agregar nueva especialidad</button>
-      <div>
-      <card>Doctores Activos</card>
-      <card>Especialidades Activas</card>
-      <card>Turnos confirmados para hoy</card>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            Directorio de Profesionales Medicos
+      <div class="resumen-panel">
 
-          </tr>
-        </thead>
+    <div class="tarjeta-resumen">
+        <div class="tarjeta-superior">
+            <span class="tarjeta-icono" aria-hidden="true">⚕</span>
+            <span class="tarjeta-etiqueta">+4 este mes</span>
+        </div>
 
-        <tbody id="product-table-body">
+        <h3>Doctores activos</h3>
+        <p class="tarjeta-valor">124</p>
+    </div>
 
-          <th> Nombre del doctor </th>
-        </tbody>
-      </table>
+    <div class="tarjeta-resumen">
+        <div class="tarjeta-superior">
+            <span class="tarjeta-icono" aria-hidden="true">▦</span>
+            <span class="tarjeta-etiqueta">Estable</span>
+        </div>
+
+        <h3>Especialidades activas</h3>
+        <p class="tarjeta-valor">32</p>
+    </div>
+
+    <div class="tarjeta-resumen">
+        <div class="tarjeta-superior">
+            <span class="tarjeta-icono" aria-hidden="true">📅</span>
+            <span class="tarjeta-etiqueta">Hoy</span>
+        </div>
+
+        <h3>Turnos confirmados para hoy</h3>
+        <p class="tarjeta-valor">48</p>
+    </div>
+
+</div>
+    <section class="directorio">
+
+    <div class="directorio-encabezado">
+        <h3 id="titulo-directorio">
+            Directorio de Profesionales Médicos
+        </h3>
+
+        <input
+            type="search"
+            class="directorio-buscador"
+            placeholder="Buscar por nombre..."
+            aria-label="Buscar médico por nombre"
+        >
+    </div>
+
+    <div class="directorio-tabla-contenedor">
+        <table
+            class="directorio-tabla"
+            aria-labelledby="titulo-directorio"
+        >
+            <thead>
+                <tr>
+                    <th scope="col">Nombre del doctor</th>
+                    <th scope="col">Especialidad</th>
+                    <th scope="col">Estado de disponibilidad</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+
+            <!-- JavaScript insertará las filas acá. -->
+            <tbody id="product-table-body"></tbody>
+        </table>
+    </div>
+
+    <div class="directorio-pie">
+        <p id="cantidad-doctores"></p>
+    </div>
+
+</section>
     </main>
     <footer>Mi Aplicación &copy; 2026</footer>
   </div>
