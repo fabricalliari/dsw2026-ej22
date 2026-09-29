@@ -18,7 +18,9 @@ function addSpecialties(name, description){
     const specialty = {
         id: crypto.randomUUID(),
         name: name,
-        description:description
+        description:description,
+        createdAt: new Date().toISOString()
+
     };
     const specialties = getSpecialties();
     specialties.push(specialty);
@@ -26,6 +28,9 @@ function addSpecialties(name, description){
     return specialty;
 }
 
+function deleteSpecialty(id){
+    saveSpecialties(getSpecialties().filter(s => s.id !== id));
+}
 function searchSpecialties(text){
     const specialties =  getSpecialties();
     const search = text.toLowerCase();
